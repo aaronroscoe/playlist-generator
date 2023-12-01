@@ -1,32 +1,36 @@
 import pandas as pd
 
+# Define the funtion search_song_list, opens the playlist spreadsheet and searches based on 2 inputs
 def search_song_list(decade, genre):
     df = pd.read_csv('playlistsongs.csv', sep=',')
 
     # Filter rows based on user inputs for decade and genre
     filtered_df = df[(df['decade'] == decade) & (df['genre'] == genre)]
 
-    # Choose 7 rows from the filtered DataFrame
+    # Choose at random 8 rows from the filtered DataFrame
     selected_rows = filtered_df.sample(8)['artist and title']
 
     return selected_rows.to_list()
-   
+
+# Define the funtion search_song_colour, opens the playlist spreadsheet and searches based on colour input
 def search_song_colour(colour):
     df = pd.read_csv('playlistsongs.csv', sep=',')
-    # Filter rows based on user inputs for decade and genre
+    # Filter rows based on user inputs for colour
     filtered_df = df[(df['colour'] == colour)]
-    # Choose 1 rows from the filtered DataFrame
+    # Choose 1 row at random from the filtered DataFrame
     selected_rows = filtered_df.sample(1)['artist and title']
     return selected_rows.to_list()
 
+# Define the funtion search_song_weather, opens the playlist spreadsheet and searches based on weather input
 def search_song_weather(weather):
     df = pd.read_csv('playlistsongs.csv', sep=',')
-    # Filter rows based on user inputs for decade and genre
+    # Filter rows based on user inputs for weather
     filtered_df = df[(df['weather'] == weather)]
-    # Choose 1 rows from the filtered DataFrame
+    # Choose 1 row at random from the filtered DataFrame
     selected_rows = filtered_df.sample(1)['artist and title']
     return selected_rows.to_list()
- 
+
+# Inputs from user for playlist selection
 print("Welcome to the random playlist generator. \nAnswer these questions, and I will build a playlist for you!")
 
 user_input_name = str(input("What is your name: "))
