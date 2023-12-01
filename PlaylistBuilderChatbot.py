@@ -39,10 +39,12 @@ user_input_genre = str(input("\nWhich genre is your preferred choice? \nPop/Danc
 user_input_colour = str(input("\nWhat is your favourite colour: \nRed/Green/Yellow/Blue/Purple/Black: ")).lower()
 user_input_weather = str(input("\nWhat is your favourite weather? \nSun/Rain/Wind/Storm: ")).lower()
 
+# Runs the functions, based on inputs to create results. 
 result_one = search_song_list(user_input_decade, user_input_genre)
 result_colour = search_song_colour(user_input_colour)
 result_weather = search_song_weather(user_input_weather)
 
+# Prints results
 print(f"Thanks {user_input_name.title()}... here's some songs I suggest:")
 print(f"1. {result_one[0]}")
 print(f"2. {result_one[1]}")
