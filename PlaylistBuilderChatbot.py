@@ -34,10 +34,30 @@ def search_song_weather(weather):
 print("Welcome to the random playlist generator. \nAnswer these questions, and I will build a playlist for you!")
 
 user_input_name = str(input("What is your name: "))
-user_input_decade = int(input("\nWhat is your favourite decade? \n1960/1970/1980/1990/2000: "))
-user_input_genre = str(input("\nWhich genre is your preferred choice? \nPop/Dance/RnB/Rock/Relaxing: ")).lower()
-user_input_colour = str(input("\nWhat is your favourite colour: \nRed/Green/Yellow/Blue/Purple/Black: ")).lower()
-user_input_weather = str(input("\nWhat is your favourite weather? \nSun/Rain/Wind/Storm: ")).lower()
+while True:
+    user_input_decade = int(input("\nWhat is your favourite decade? \n1960/1970/1980/1990/2000: "))
+    if user_input_decade not in (1960, 1970, 1980, 1990, 2000):
+        print("Error! Incorrect decade entry. Try again")
+    else:
+        break
+while True:
+    user_input_genre = str(input("\nWhich genre is your preferred choice? \nPop/Dance/RnB/Rock/Relaxing: ")).lower()
+    if user_input_genre not in ('pop', 'dance', 'rnb', 'rock', 'relaxing'):
+        print("Error! Incorrect genre entry. Try again")
+    else:
+        break
+while True:
+    user_input_colour = str(input("\nWhat is your favourite colour: \nRed/Green/Yellow/Blue/Purple/Black: ")).lower()
+    if user_input_colour not in ('red', 'green', 'yellow', 'blue', 'purple', 'black'):
+        print("Error! Incorrect colour entry. Try again")
+    else:
+        break
+while True:
+    user_input_weather = str(input("\nWhat is your favourite weather? \nSun/Rain/Wind/Storm: ")).lower()
+    if user_input_weather not in ('sun', 'rain', 'wind', 'storm'):
+        print("Error! Incorrect weather entry. Try again")
+    else:
+        break
 
 # Runs the functions, based on inputs to create results. 
 result_one = search_song_list(user_input_decade, user_input_genre)
